@@ -12,12 +12,13 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid slategrey;
 }
+
 .navbar h1 {
-  color: #f1356d;
+  color: #3548f1;
 }
 .navbar .links {
   margin-left: auto;
@@ -28,5 +29,15 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #f13535;
+}
+
+/* Login Form Styles */
+
+.loginDiv {
+    display: flex;           
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    height: 300px;
 }
