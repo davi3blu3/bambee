@@ -1,0 +1,19 @@
+{
+    "todos": [
+        {
+            "task": "Walk The Dog",
+            "id": 1
+        },
+        {
+            "task": "Take Out The Trash",
+            "id": 2
+        }
+    ],
+    "users": [
+        {
+            "email": "user@test.com",
+            "password": "password",
+            "id": 1
+        }
+    ]
+}

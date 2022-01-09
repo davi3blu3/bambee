@@ -41,3 +41,15 @@
     align-items: center;     
     height: 300px;
 }
+
+input {
+    width: 200px;
+    margin: .3em;
+    display: block;
+}
+
+/* Form Validation */
+
+input.incorrect {
+  border: 1px solid red;
+}
