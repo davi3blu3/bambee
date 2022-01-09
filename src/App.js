@@ -1,22 +1,22 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {useState} from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Login from './Components/Login';
+import Navbar from './Components/navbar';
 
 const App = () => {
   return (
     <div className="App">
+      <Navbar/>
     <Router>
-      <Switch>
-        <Route exact path="/">
-
+      <Routes>
+        <Route exact path="/" element={<Login />}>
         </Route>
         <Route path="/todo">
 
         </Route>
         <Route path="*">
-          
+
         </Route>
-      </Switch>
+      </Routes>
     </Router>
     </div>
   );
@@ -24,4 +24,3 @@ const App = () => {
  
 export default App;
 
-export default App;
