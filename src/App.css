@@ -53,3 +53,8 @@ input {
 input.incorrect {
   border: 1px solid red;
 }
+
+.wrong {
+  color: red;
+  font-size: 20px;
+}

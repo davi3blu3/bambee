@@ -1,13 +1,14 @@
 import "../App.css";
 import {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState('');
-    const [confirmUser, setConfirmUser] = useState();
+    const [user, setUser] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:8000/users')
@@ -22,18 +23,13 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        console.log(user[0].email, user[0].password)
-        console.log(email, password)
         if(email === user[0].email && password === user[0].password){
-            setConfirmUser(true)
+            setUser(true)
+            navigate('/todo');
         } else {
-            setConfirmUser(false)
+            setUser(false)
         }
     }
-
-    
-
 
     return ( 
         <div className="loginDiv">
@@ -45,7 +41,7 @@ const Login = () => {
                     name="email"
                     required
                     onChange={(e) => setEmail(e.target.value)}
-                    className={!confirmUser ? "incorrect" : ""}
+                    className={!user ? "incorrect" : ""}
                 />
                 <label>Password:</label>
                 <input 
@@ -54,13 +50,13 @@ const Login = () => {
                     name="password" 
                     required
                     onChange={(e) => setPassword(e.target.value)}
-                    className={!confirmUser ? "incorrect" : ""}
+                    className={!user ? "incorrect" : ""}
                 />
                 <button >
                     Submit
                 </button>
             </form>
-            {!confirmUser ? <p>Incorrect Credentials</p> : <p>...Loading</p>}
+            {user ? <p className="wrong">Incorrect Credentials</p> : <p>...Loading</p>}
         </div>
      );
 }
